@@ -1,15 +1,26 @@
 package com.openclassrooms.store;
 
-public class Screen {
+public class Screen extends Item {
 
-    public String brand;
-    public double price;
-    public String resolution;
+    private String resolution;
 
-    public Screen(String a, double b, String c) {
-        this.brand = a;
-        this.price = b;
-        this.resolution = c;
+    public String getResolution() {
+        return resolution;
     }
 
+    public void setResolution(String resolution) {
+        this.resolution = resolution;
+    }
+
+    public Screen(Brand brand, double price, String resolution) {
+        super(brand, price);
+        this.resolution = resolution;
+    }
+
+    @Override
+    public String toString() {
+        return "Screen{" + super.toString() +
+                ", resolution='" + resolution + '\'' +
+                '}';
+    }
 }
