@@ -36,6 +36,9 @@ public class Inventory {
 	public void displayInventoryOnConsole() {
 		for (Map.Entry<Item, Integer> curseur : stock.entrySet()) {
 			System.out.println(curseur.getKey() + " quantité en stock = " + curseur.getValue());
+		/*items.forEach((item, quantity) ->
+            System.out.println((item.getClass().getSimpleName() + " - " + item.getBrand() + ":" + quantity)));*/
+
 		}
 	}
 
