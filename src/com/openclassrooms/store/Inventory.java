@@ -2,6 +2,7 @@ package com.openclassrooms.store;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.function.Consumer;
 
 import items.Item;
 
@@ -36,14 +37,25 @@ public class Inventory {
 	public void displayInventoryOnConsole() {
 		for (Map.Entry<Item, Integer> curseur : stock.entrySet()) {
 			System.out.println(curseur.getKey() + " quantité en stock = " + curseur.getValue());
-		/*items.forEach((item, quantity) ->
-            System.out.println(item.getClass().getSimpleName() + " - " + item.getBrand() + ":" + quantity));*/
-
 		}
+		System.out.println("---");
+		stock.forEach((item, quantity) ->
+            System.out.println(item.getClass().getSimpleName() + " - " + item + " quantité en stock : " + quantity));
+
+		
 	}
 
 	public void displayItemsOnConsole() {
 		stock.keySet().stream().forEach(item -> System.out.println(item.getClass().getSimpleName()+" "+item));
+		System.out.println("---");
+		stock.keySet().stream().forEach(new Consumer<Item>() {
+			@Override
+			public void accept(Item item) {
+				// TODO Auto-generated method stub
+				System.out.println(item.getClass().getSimpleName()+" "+item);
+			};
+		}
+		);
 	}
 
 }

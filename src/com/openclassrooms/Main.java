@@ -14,15 +14,16 @@ public class Main {
 																				// defaut
 
 		Inventory inventory = new Inventory();
+		
 		inventory.addItem(samsungScreen, 5);
-
 		inventory.addItem(dellMouse, 12);
 		inventory.removeItem(dellMouse, 2);
 		inventory.displayInventoryOnConsole();
-
+		System.out.println("*****");
+		
 		inventory.removeItem(dellMouse, 12);
-
 		inventory.displayInventoryOnConsole();
+		System.out.println("***");
 		inventory.displayItemsOnConsole();
 	}
 }
