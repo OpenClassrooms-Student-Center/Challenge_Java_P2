@@ -6,10 +6,10 @@ public class Screen {
     public double price;
     public String resolution;
 
-    public Screen(String a, double b, String c) {
-        this.brand = a;
-        this.price = b;
-        this.resolution = c;
+    public Screen(String brand, double price, String resolution) {
+        this.brand = brand;
+        this.price = price;
+        this.resolution = resolution;
     }
 
 }
